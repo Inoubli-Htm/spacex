@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/SlideNavBar.css";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 function SlideNavBar() {
+  const [openClass, setOpenClass] = useState("none");
+  const handleClose = () => {
+    openClass === "none" ? setOpenClass("block") : setOpenClass("none");
+  };
   return (
     <>
       <div id="wrapper">
@@ -162,7 +166,7 @@ function SlideNavBar() {
             </ul>
           </div>
           <div id="menu-close" />
-          <div id="menu">
+          <div id="menu" style={{ display: openClass }}>
             <div id="menu-background" />
             <div id="menu-navigation">
               <ul className="nav-links">
@@ -283,6 +287,7 @@ function SlideNavBar() {
             aria-label="Menu"
             role="button"
             aria-haspopup="dialog"
+            onClick={handleClose}
           >
             <div id="bar1" className="bar" />
             <div id="bar2" className="bar" />

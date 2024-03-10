@@ -1,14 +1,12 @@
-import SlideNavBar from "./components/SlideNavBar";
 import "./App.css";
-import Profile from "./components/Profile/Profile";
 import { BrowserRouter } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <SlideNavBar />
-        <Profile />
+        <Home />
       </BrowserRouter>
     </div>
   );
